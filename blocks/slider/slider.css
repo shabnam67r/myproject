@@ -1,22 +1,21 @@
 /* Slider container */
 .slider {
   width: 100%;
-  height: 350px; /* ارتفاع ثابت برای اسلایدها */
+  height: 350px; 
   border-radius: 10px;
   position: relative;
-  overflow-x: auto; /* برای اسکرول افقی */
-  padding-right: 50px; /* فضای اضافی برای سایه */
-  white-space: nowrap; /* جلوگیری از شکست خط */
-  scroll-behavior: smooth; /* اسکرول نرم برای راحتی بیشتر */
+  overflow-x: auto;
+  padding-right: 50px;
+  white-space: nowrap;
+  scroll-behavior: smooth; 
   box-sizing: border-box;
 }
 
-/* Slider content (تمامی اسلایدها) */
 .slider-container {
   display: flex;
-  flex-direction: row; /* اسلایدها به صورت افقی قرار می‌گیرند */
-  overflow-x: auto; /* اجازه اسکرول افقی */
-  gap: 20px; /* فاصله بین اسلایدها */
+  flex-direction: row; 
+  overflow-x: auto; 
+  gap: 20px;
   padding: 30px 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -29,27 +28,25 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 50px; /* سایز سایه */
+  width: 50px; 
   height: 100%;
-  background: linear-gradient(to left, white, transparent); /* ایجاد افکت سایه */
+  background: linear-gradient(to left, white, transparent); 
   pointer-events: none;
   z-index: 1;
 }
 .slider-content{
   display: flex;
 }
-/* هر اسلاید (کارت رویداد) */
 .slide {
-  flex: 0 0 auto; /* اسلایدها به اندازه ثابت خود باقی می‌مانند */
-  width: 300px; /* عرض هر اسلاید */
-  height: 350px; /* ارتفاع اسلاید */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* سایه برای هر اسلاید */
+  flex: 0 0 auto; 
+  width: 300px; 
+  height: 350px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   border-radius: 8px;
   background: #fff;
   transition: transform 0.3s ease;
 }
 
-/* استایل کارت رویداد */
 .event-card {
   display: flex;
   flex-direction: column;
@@ -172,11 +169,11 @@
 /* Responsiveness */
 @media (max-width: 768px) {
   .slider {
-    padding: 0 20px; /* اضافه کردن فضای کناری برای صفحه‌های کوچکتر */
+    padding: 0 20px; 
   }
 
   .slide {
-    width: 90%; /* تنظیم عرض اسلایدها برای صفحه‌های کوچکتر */
+    width: 90%; 
     height: auto;
   }
 
