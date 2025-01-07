@@ -1,0 +1,118 @@
+#certificate {
+  display: flex;
+  justify-content: center; /* Center content */
+  gap: 30px; /* Space between cards */
+  flex-wrap: wrap; /* Enable wrapping on smaller screens */
+  margin-top: 40px;
+  padding: 0 20px; /* Padding for mobile responsiveness */
+  background-color: #fff;
+  width: 100%;
+  height: auto; /* Adjust height automatically for content */
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+.certificate-cards {
+  background: #fff;
+  text-align: center;
+  width: 30%; /* Default width for desktop */
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center-align items */
+  border: 1px solid #ddd; /* Optional: Add border for better visual separation */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
+  transition: transform 0.3s ease; /* Optional: Add hover animation */
+}
+
+.certificate-cards:hover {
+  transform: scale(1.05); /* Enlarge slightly on hover */
+}
+
+.certificate-cards img {
+  width: 100%; /* Make image responsive */
+  max-width: 150px; /* Set a max width for better scaling */
+  height: auto;
+  opacity: 1;
+  object-fit: contain;
+}
+
+.certificate-cards h2 {
+  font-size: 24px;
+  color: #232B76;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 74px;
+  height: 74px;
+  background: #E2F3FC;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+.certificate-cards p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: start;
+}
+
+#modal-circle {
+  width: 74px;
+  height: 74px;
+  background: #E2F3FC 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-radius: 50%;
+}
+
+#modal-circle h2 {
+  width: 314px;
+  height: 34px;
+  text-align: left;
+  font: normal normal bold 30px/43px FS Albert;
+  letter-spacing: 0px;
+  color: #232B76;
+  opacity: 1;
+}
+
+/* Responsiveness for smaller screens */
+@media screen and (max-width: 1024px) {
+  .certificate-cards {
+    width: 40%; /* Adjust width for tablets */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #certificate {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    gap: 20px;
+  }
+
+  .certificate-cards {
+    width: 80%; /* Take up more space on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .certificate-cards {
+    width: 100%; /* Full width for mobile devices */
+    padding: 15px;
+  }
+
+  .certificate-cards h2 {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  .certificate-cards p {
+    font-size: 12px; /* Adjust text size for better readability */
+  }
+
+  .circle {
+    width: 50px; /* Adjust circle size */
+    height: 50px;
+  }
+}

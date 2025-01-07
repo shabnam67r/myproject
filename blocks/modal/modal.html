@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./modal.css" />
+  </head>
+
+  <body>
+    <!-- Modal (initially hidden) -->
+    <div class="modal" id="bio-modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <p id="modal-text">Speaker bio will appear here.</p>
+      </div>
+    </div>
+
+    <!-- Speakers section with buttons -->
+    <div class="speakers">
+      <button class="bio-btn" data-bio="Speaker 1 Bio">
+        See Bio - Speaker 1
+      </button>
+      <button class="bio-btn" data-bio="Speaker 2 Bio">
+        See Bio - Speaker 2
+      </button>
+    </div>
+    <script src="./modal.js"></script>
+  </body>
+</html>
