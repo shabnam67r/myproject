@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Set up the countdown container
-  const countdownContainer = document.getElementById("countdown");
+  const countdownContainer = document.getElementById('countdown');
   countdownContainer.innerHTML = `
     <div class="countdown-content">
       <div class="countdown-text-content">
@@ -37,49 +37,51 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   function getFormattedDate() {
     const today = new Date();
-    return today.toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+    return today.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
     });
   }
 
   // Display the current date using the utility function
-  const dateContainer = document.getElementById("date-container");
+  const dateContainer = document.getElementById('date-container');
   dateContainer.innerText = getFormattedDate(); // Use utility function here
 
   // Countdown timer setup
-  const targetDate = new Date("2025-01-15T24:00:00").getTime();
- // Function to update the countdown timer
- function updateCountdown(targetDate) {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+  const targetDate = new Date('2025-01-15T24:00:00').getTime();
+  // Function to update the countdown timer
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-  if (distance < 0) {
-    return { ended: true };
+    if (distance < 0) {
+      return { ended: true };
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    return {
+      ended: false, days, hours, minutes, seconds,
+    };
   }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  return { ended: false, days, hours, minutes, seconds };
-}
   // Function to update the countdown and display it
   function updateCountdownDisplay() {
     const result = updateCountdown(targetDate); // Use utility function here
 
     if (result.ended) {
-      document.getElementById("timer").innerHTML = "<p>Countdown Ended!</p>";
+      document.getElementById('timer').innerHTML = '<p>Countdown Ended!</p>';
       return;
     }
 
-    document.getElementById("days").innerText = result.days;
-    document.getElementById("hours").innerText = result.hours;
-    document.getElementById("minutes").innerText = result.minutes;
-    document.getElementById("seconds").innerText = result.seconds;
+    document.getElementById('days').innerText = result.days;
+    document.getElementById('hours').innerText = result.hours;
+    document.getElementById('minutes').innerText = result.minutes;
+    document.getElementById('seconds').innerText = result.seconds;
   }
 
   // Update countdown every second

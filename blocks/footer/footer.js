@@ -1,6 +1,6 @@
 // Wait for the DOM to fully load
-document.addEventListener("DOMContentLoaded", function () {
-   const footerHTML = `
+document.addEventListener('DOMContentLoaded', () => {
+  const footerHTML = `
       <div class="footer-content">
         <!-- Logo Section -->
         <div class="footer-logo">
@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `;
-  
-    document.getElementById('footer-container').innerHTML = footerHTML;
-  });
-  
+
+  document.getElementById('footer-container').innerHTML = footerHTML;
+});

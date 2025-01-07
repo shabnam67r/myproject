@@ -1,11 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Use utility to safely get the slider container
-  const sliderContainer = selectById("slider-container");
-  if (!sliderContainer) return; // Early return if the container doesn't exist
-
-  // Create slider structure dynamically
-  const slider = createElement("div", ["slider"]);
-
+document.addEventListener('DOMContentLoaded', () => {
   // Function to dynamically create an HTML element with classes
   function createElement(tagName, classNames = []) {
     const element = document.createElement(tagName);
@@ -21,40 +14,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return element;
   }
+  // Use utility to safely get the slider container
+  const sliderContainer = selectById('slider-container');
+  if (!sliderContainer) return; // Early return if the container doesn't exist
+
+  // Create slider structure dynamically
+  const slider = createElement('div', ['slider']);
 
   // Array of event titles (replace these with actual event data)
   const events = [
-    "Event 1: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 2: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 3: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 4: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 5: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 6: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 7: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 8: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 9: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 10: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
-    "Event 11: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor",
+    'Event 1: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 2: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 3: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 4: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 5: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 6: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 7: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 8: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 9: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 10: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
+    'Event 11: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor',
   ];
 
   // Create slider content (cards) for each event
-  const sliderContent = createElement("div", ["slider-content"]);
+  const sliderContent = createElement('div', ['slider-content']);
 
   events.forEach((event) => {
-    const slide = createElement("div", ["slide"]);
+    const slide = createElement('div', ['slide']);
 
     // Function to format the current date
     function getFormattedDate() {
       const now = new Date();
       const options = {
-        weekday: "long",
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
+        weekday: 'long',
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
       };
-      return now.toLocaleDateString("en-US", options);
+      return now.toLocaleDateString('en-US', options);
     }
-    
+
     // Get formatted date using utils.js
     const dateString = getFormattedDate();
 
